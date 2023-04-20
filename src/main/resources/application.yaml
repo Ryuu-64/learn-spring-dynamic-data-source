@@ -1,0 +1,18 @@
+mybatis:
+  mapper-locations: "classpath*:mapper/*xml"
+
+datasource:
+  definitions:
+    - name: schemaA
+      url: jdbc:mysql://localhost:3306/schema_a?useSSL=false&serverTimezone=UTC
+      username: root
+      password: 3306
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    - name: schemaB
+      url: jdbc:mysql://localhost:3306/schema_b?useSSL=false&serverTimezone=UTC
+      username: root
+      password: 3306
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+server:
+  port: 8081

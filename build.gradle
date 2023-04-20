@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'org.ryuu'
-version = '0.0.1-SNAPSHOT'
+version = '0.1.0'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -17,7 +17,29 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
+    String lombokVersion = '1.18.26'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    // https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+    implementation 'com.mysql:mysql-connector-j:8.0.32'
+    // https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.0'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
