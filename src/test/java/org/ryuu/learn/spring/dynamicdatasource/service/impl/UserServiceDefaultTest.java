@@ -1,33 +1,25 @@
 package org.ryuu.learn.spring.dynamicdatasource.service.impl;
 
 import org.junit.jupiter.api.Test;
+import org.ryuu.learn.spring.dynamicdatasource.dto.User;
+import org.ryuu.learn.spring.dynamicdatasource.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class UserServiceTest {
+class UserServiceDefaultTest {
     @Autowired
+    @Qualifier("userServiceDefault")
     private UserService userService;
 
     @Test
-    void create() {
-    }
-
-    @Test
     void queryAll() {
-    }
-
-    @Test
-    void selectByUsername() {
-    }
-
-    @Test
-    void deleteByUsername() {
-    }
-
-    @Test
-    void dataSource() {
+        List<User> users = userService.queryAll();
+        assertNotEquals(0, users.size());
     }
 }

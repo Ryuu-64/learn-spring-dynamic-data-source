@@ -1,19 +1,27 @@
 package org.ryuu.learn.spring.dynamicdatasource.controller;
 
-import lombok.AllArgsConstructor;
 import org.ryuu.learn.spring.dynamicdatasource.dto.User;
-import org.ryuu.learn.spring.dynamicdatasource.service.impl.UserService;
+import org.ryuu.learn.spring.dynamicdatasource.service.UserService;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@Service
 @RestController
-@RequestMapping("user")
-@AllArgsConstructor
-public class UserController {
+@RequestMapping("user/default/")
+public class DefaultUserController {
     private final UserService userService;
+
+    public DefaultUserController(
+            @Qualifier("userServiceDefault")
+            UserService userService
+    ) {
+        this.userService = userService;
+    }
 
     @PostMapping("queryAll")
     public List<User> queryAll() {

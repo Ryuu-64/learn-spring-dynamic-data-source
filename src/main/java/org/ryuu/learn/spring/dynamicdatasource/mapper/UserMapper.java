@@ -7,11 +7,5 @@ import java.util.List;
 
 @Repository
 public interface UserMapper {
-    int insert(User user);
-
     List<User> selectAll();
-
-    User selectByUsername(String username);
-
-    int deleteByUsername(String username);
 }

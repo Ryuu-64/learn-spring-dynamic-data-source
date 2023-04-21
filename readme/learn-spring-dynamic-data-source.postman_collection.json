@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "69821ac8-85e4-490f-bdfd-04f5ef7dda24",
+		"name": "learn-spring-dynamic-data-source",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25709974",
+		"_collection_link": "https://orange-equinox-728700.postman.co/workspace/My-Workspace~ebf6b5a3-4408-439f-8e97-39867fb84dbb/collection/25709974-69821ac8-85e4-490f-bdfd-04f5ef7dda24?action=share&creator=25709974&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "default/queryAll",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataSourceKey\" : \"schemaB\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/user/default/queryAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"default",
+								"queryAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "noDataSourceRouting/queryAll",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/user/noDataSourceRouting/queryAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"noDataSourceRouting",
+								"queryAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "annotationFirst/queryAll",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataSourceKey\" : \"schemaB\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/user/annotationFirst/queryAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"annotationFirst",
+								"queryAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filterFirst/queryAll",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataSourceKey\" : \"schemaB\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/user/filterFirst/queryAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"filterFirst",
+								"queryAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
